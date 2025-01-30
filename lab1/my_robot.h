@@ -3,7 +3,7 @@
 #include <Pololu3piPlus32U4.h>
 using namespace Pololu3piPlus32U4;
 
-//Allowing motors to move by creating functions for specific movement with modifiable left and right speeds 
+//Allowing motors to move by creating functions for specific movement with modifiable left and right speeds as well as movement duration
 
 class MyRobot{
   public:

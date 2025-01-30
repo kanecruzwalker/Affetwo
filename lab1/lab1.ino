@@ -26,45 +26,51 @@ void loop() {
   //One can change left_speed, and right_speed values as desired to increase/decrease speed, movement tradjectory
   //One can change movement_duration to have that movement pattern execute for the desired time. 1000 miliseconds = 1 second
 
+
   //move forward
   robot.MoveForward(left_speed, right_speed, movement_duration);
   //delay(3000);
-
 
 
   //turn right(in place)                          //left goes forward, right goes backwards
   right_speed = right_speed * -1;
   robot.SpinRight(left_speed, right_speed, movement_duration);
   //delay(3000);
+  right_speed = default_speed; //reseting right_speed to default value for next operation
 
-  right_speed = default_speed;
 
   //turn left (in place)                          //left goes backwards , right goes forwards
   left_speed = left_speed * -1;
   robot.SpinLeft(left_speed, right_speed, movement_duration);
   //delay(3000);
-  left_speed = default_speed;
+  left_speed = default_speed; //reseting right_speed to default value for next operation
+
 
   //move forward while turning right               //left goes faster than right side, but by how much?
   left_speed = left_speed * left_multiplier;
   robot.MoveForwardTurnRight(left_speed, right_speed, movement_duration);
   //delay(3000);
-  left_speed = default_speed;
+  left_speed = default_speed;     //reseting right_speed to default value for next operation
+
 
   //move forward while turning left               //right  goes faster than left side, but by how much?
   right_speed = right_speed * right_multiplier;
   robot.MoveForwardTurnLeft(left_speed, right_speed, movement_duration);
   //delay(3000);
-  right_speed = default_speed;
+  right_speed = default_speed;    //reseting right_speed to default value for next operation
+
 
   //move backwards
   //set speeds in the negative direction to go back
   left_speed = left_speed * -1;
   right_speed = right_speed * -1;
-
   robot.MoveBackwards(left_speed, right_speed, movement_duration);
   //delay(3000);
 
+
   //halt
   robot.Stop();
+
+  //The current variables here could be moved into the MyRobot private variables and the operations could take place in their functions
+  //Will probably need to refactor that for post lab but for now this allows us flexibility and ease of use when wanting to change our inputs as we test
 }

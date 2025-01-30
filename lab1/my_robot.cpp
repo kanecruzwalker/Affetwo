@@ -20,7 +20,7 @@ void MyRobot::MoveForward(int left_speed_in, int right_speed_in, int movement_du
 
 void MyRobot::SpinLeft(int left_speed_in, int right_speed_in, int movement_duration){
   //Spining Left
-  //Left should be the negative value of right
+  //Left should be the negative value
   //otherwise it wont spin in place 
   motors.setSpeeds(left_speed_in, right_speed_in);
   delay(movement_duration);
@@ -28,16 +28,20 @@ void MyRobot::SpinLeft(int left_speed_in, int right_speed_in, int movement_durat
 }
 
 void MyRobot::SpinRight(int left_speed_in, int right_speed_in, int movement_duration){
+  //Spining Right
+  //Right should be the negative value 
   motors.setSpeeds(left_speed_in, right_speed_in);
   delay(movement_duration);
 }
 
 void MyRobot::MoveForwardTurnLeft(int left_speed_in, int right_speed_in, int movement_duration){
+  //Right should move quicker than left
   motors.setSpeeds(left_speed_in, right_speed_in);
   delay(movement_duration);
 }
 
 void MyRobot::MoveForwardTurnRight(int left_speed_in, int right_speed_in, int movement_duration){
+  //Left should move quicker than right
   motors.setSpeeds(left_speed_in, right_speed_in);
   delay(movement_duration);
 }
@@ -48,9 +52,12 @@ void MyRobot::Stop(){
 
 
 void MyRobot::MoveBackwards(int left_speed_in, int right_speed_in, int movement_duration){
+  //Both left and right should be negative numbers
   motors.setSpeeds(left_speed_in, right_speed_in);
   delay(movement_duration);
 }
 
 //Could create one move class that uses set speeds (since input values would differ it would handle all cases)
 //Could set specific move parameters in already created function, making them more like halt 
+//Should implement class variables and calculations in functions instead of in .ino 
+
