@@ -8,13 +8,16 @@ MyRobot::MyRobot() {
   
 }
 
-void MyRobot::MoveForward(int left_speed_in, int right_speed_in, int movement_duration){
+void MyRobot::MoveForward(float distance, int speed_in){
   //Movin forward
   //Both speeds in should be equal to eachother
   //otherwise we are not moving forward 
-  motors.setSpeeds(left_speed_in, right_speed_in);
-  delay(movement_duration);
+  float actual_speed = speed_in / 1000.0;
+  int time_ms = (distance / actual_speed) * 1000.0;
 
+  motors.setSpeeds(speed_in, speed_in);
+  delay(time_ms);
+  Stop();
   //could create conditional logic to ensure speeds in are == before executing
 }
 

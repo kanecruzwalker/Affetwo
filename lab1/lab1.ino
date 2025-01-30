@@ -25,11 +25,11 @@ void loop() {
   //They use the setSpeeds function and delay function to execute desired movement over a desired time period
   //One can change left_speed, and right_speed values as desired to increase/decrease speed, movement tradjectory
   //One can change movement_duration to have that movement pattern execute for the desired time. 1000 miliseconds = 1 second
-
+  float distance_in_meters = .5;
+  int speed = 50;
 
   //move forward
-  robot.MoveForward(left_speed, right_speed, movement_duration);
-  //delay(3000);
+  robot.MoveForward(distance_in_meters, speed);
 
 
   //turn right(in place)                          //left goes forward, right goes backwards

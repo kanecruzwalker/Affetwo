@@ -10,7 +10,7 @@ class MyRobot{
     MyRobot();    
 
     //Movement Functions  
-    void MoveForward(int left_speed_in, int right_speed_in, int movement_duration);
+    void MoveForward(float distance, int speed_in);
     void MoveBackwards(int left_speed_in, int right_speed_in, int movement_duration);
     void SpinLeft(int left_speed_in, int right_speed_in, int movement_duration);
     void SpinRight(int left_speed_in, int right_speed_in, int movement_duration);
