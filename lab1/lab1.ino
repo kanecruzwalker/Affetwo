@@ -27,23 +27,19 @@ void loop() {
   //One can change movement_duration to have that movement pattern execute for the desired time. 1000 miliseconds = 1 second
   float distance_in_meters = .5;
   int speed = 50;
+  int duration_in_ms = 3000;
 
   //move forward
   robot.MoveForward(distance_in_meters, speed);
 
 
   //turn right(in place)                          //left goes forward, right goes backwards
-  right_speed = right_speed * -1;
-  robot.SpinRight(left_speed, right_speed, movement_duration);
+  robot.SpinRight(duration_in_ms, speed);
   //delay(3000);
-  right_speed = default_speed; //reseting right_speed to default value for next operation
 
 
   //turn left (in place)                          //left goes backwards , right goes forwards
-  left_speed = left_speed * -1;
-  robot.SpinLeft(left_speed, right_speed, movement_duration);
-  //delay(3000);
-  left_speed = default_speed; //reseting right_speed to default value for next operation
+  robot.SpinLeft(duration_in_ms, speed);
 
 
   //move forward while turning right               //left goes faster than right side, but by how much?

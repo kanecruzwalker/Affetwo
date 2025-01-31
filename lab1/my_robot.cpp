@@ -21,20 +21,20 @@ void MyRobot::MoveForward(float distance, int speed_in){
   //could create conditional logic to ensure speeds in are == before executing
 }
 
-void MyRobot::SpinLeft(int left_speed_in, int right_speed_in, int movement_duration){
+void MyRobot::SpinLeft(int duration_in, int speed_in){
   //Spining Left
   //Left should be the negative value
   //otherwise it wont spin in place 
-  motors.setSpeeds(left_speed_in, right_speed_in);
-  delay(movement_duration);
+  motors.setSpeeds(speed_in * -1, speed_in);
+  delay(duration_in);
 
 }
 
-void MyRobot::SpinRight(int left_speed_in, int right_speed_in, int movement_duration){
+void MyRobot::SpinRight(int duration_in, int speed_in){
   //Spining Right
   //Right should be the negative value 
-  motors.setSpeeds(left_speed_in, right_speed_in);
-  delay(movement_duration);
+  motors.setSpeeds(speed_in, speed_in * -1);
+  delay(duration_in);
 }
 
 void MyRobot::MoveForwardTurnLeft(int left_speed_in, int right_speed_in, int movement_duration){
