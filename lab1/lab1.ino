@@ -62,10 +62,8 @@ void loop() {
 
   //move backwards
   //set speeds in the negative direction to go back
-  left_speed = left_speed * -1;
-  right_speed = right_speed * -1;
-  robot.MoveBackwards(left_speed, right_speed, movement_duration);
-  //delay(3000);
+  robot.MoveBackwards(distance_in_meters, speed);
+
 
 
   //halt

@@ -54,10 +54,13 @@ void MyRobot::Stop(){
 }
 
 
-void MyRobot::MoveBackwards(int left_speed_in, int right_speed_in, int movement_duration){
+void MyRobot::MoveBackwards(float distance_in, int speed_in){
   //Both left and right should be negative numbers
-  motors.setSpeeds(left_speed_in, right_speed_in);
-  delay(movement_duration);
+  float actual_speed = speed_in / 1000.0;
+  int time_ms = (distance_in / actual_speed) * 1000.0;
+
+  motors.setSpeeds(speed_in * -1, speed_in * -1);
+  delay(time_ms);
 }
 
 //Could create one move class that uses set speeds (since input values would differ it would handle all cases)
